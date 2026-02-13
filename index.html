@@ -700,22 +700,49 @@ body::after{
     </div>
 
     <div class="os-content" id="linux">
+      <p style="color:var(--text-secondary);font-size:.88rem;margin-bottom:8px">Ejecuta estos comandos <strong>uno a uno</strong>:</p>
+
       <div class="terminal">
         <div class="terminal-header">
           <span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span>
-          <span class="terminal-title">bash &mdash; terminal</span>
+          <span class="terminal-title">1 &mdash; Actualizar repositorios</span>
           <button class="terminal-copy" onclick="copyCode(this)">copiar</button>
         </div>
         <div class="terminal-body">
-<code><span class="comment"># Actualizar repositorios</span>
-<span class="cmd">sudo</span> apt update
+<code><span class="cmd">sudo</span> apt update</code>
+        </div>
+      </div>
 
-<span class="comment"># Instalar Node.js v20</span>
-<span class="cmd">curl</span> <span class="flag">-fsSL</span> https://deb.nodesource.com/setup_20.x | <span class="cmd">sudo</span> <span class="flag">-E</span> bash -
-<span class="cmd">sudo</span> apt-get install <span class="flag">-y</span> nodejs
+      <div class="terminal">
+        <div class="terminal-header">
+          <span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span>
+          <span class="terminal-title">2 &mdash; Instalar Node.js v20</span>
+          <button class="terminal-copy" onclick="copyCode(this)">copiar</button>
+        </div>
+        <div class="terminal-body">
+<code><span class="cmd">curl</span> <span class="flag">-fsSL</span> https://deb.nodesource.com/setup_20.x | <span class="cmd">sudo</span> <span class="flag">-E</span> bash -</code>
+        </div>
+      </div>
 
-<span class="comment"># Comprobar version</span>
-<span class="cmd">node</span> <span class="flag">--version</span>
+      <div class="terminal">
+        <div class="terminal-header">
+          <span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span>
+          <span class="terminal-title">3 &mdash; Instalar nodejs</span>
+          <button class="terminal-copy" onclick="copyCode(this)">copiar</button>
+        </div>
+        <div class="terminal-body">
+<code><span class="cmd">sudo</span> apt-get install <span class="flag">-y</span> nodejs</code>
+        </div>
+      </div>
+
+      <div class="terminal">
+        <div class="terminal-header">
+          <span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span>
+          <span class="terminal-title">4 &mdash; Comprobar version</span>
+          <button class="terminal-copy" onclick="copyCode(this)">copiar</button>
+        </div>
+        <div class="terminal-body">
+<code><span class="cmd">node</span> <span class="flag">--version</span>
 <span class="cmd">npm</span> <span class="flag">--version</span></code>
         </div>
       </div>
@@ -866,20 +893,9 @@ body::after{
     <h4>Tu Pagina Web Personal</h4>
     <p>Crea un portfolio profesional sin saber HTML. Gemini lo escribe por ti.</p>
 
-    <div class="terminal">
-      <div class="terminal-header">
-        <span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span>
-        <span class="terminal-title">bash &mdash; preparacion</span>
-        <button class="terminal-copy" onclick="copyCode(this)">copiar</button>
-      </div>
-      <div class="terminal-body">
-<code><span class="comment"># 1. Crea una carpeta para tu proyecto</span>
-<span class="cmd">mkdir</span> mi-web-personal
-<span class="cmd">cd</span> mi-web-personal
-
-<span class="comment"># 2. Abre Gemini CLI</span>
-<span class="cmd">gemini</span></code>
-      </div>
+    <div class="install-cmd">
+      <code>mkdir mi-web-personal && cd mi-web-personal && gemini</code>
+      <button class="copy-btn" onclick="copyText(this,'mkdir mi-web-personal && cd mi-web-personal && gemini')">Copiar</button>
     </div>
 
     <div class="prompt-box">
@@ -906,17 +922,9 @@ Todo en un solo archivo index.html con CSS incluido.</pre>
     <h4>Juego Snake en JavaScript</h4>
     <p>El clasico juego de la serpiente. Un archivo, cero dependencias, pura diversion.</p>
 
-    <div class="terminal">
-      <div class="terminal-header">
-        <span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span>
-        <span class="terminal-title">bash &mdash; preparacion</span>
-        <button class="terminal-copy" onclick="copyCode(this)">copiar</button>
-      </div>
-      <div class="terminal-body">
-<code><span class="cmd">mkdir</span> mi-juego-snake
-<span class="cmd">cd</span> mi-juego-snake
-<span class="cmd">gemini</span></code>
-      </div>
+    <div class="install-cmd">
+      <code>mkdir mi-juego-snake && cd mi-juego-snake && gemini</code>
+      <button class="copy-btn" onclick="copyText(this,'mkdir mi-juego-snake && cd mi-juego-snake && gemini')">Copiar</button>
     </div>
 
     <div class="prompt-box">
@@ -944,18 +952,11 @@ Requisitos:
     <h4>Analizador de Texto Inteligente</h4>
     <p>Convierte tus apuntes de clase en material de estudio automaticamente.</p>
 
-    <div class="terminal">
-      <div class="terminal-header">
-        <span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span>
-        <span class="terminal-title">bash &mdash; preparacion</span>
-        <button class="terminal-copy" onclick="copyCode(this)">copiar</button>
-      </div>
-      <div class="terminal-body">
-<code><span class="comment"># Supon que tienes un archivo "apuntes.txt" con tus apuntes de Historia</span>
-<span class="cmd">cd</span> mis-apuntes
-<span class="cmd">gemini</span></code>
-      </div>
+    <div class="install-cmd">
+      <code>cd mis-apuntes && gemini</code>
+      <button class="copy-btn" onclick="copyText(this,'cd mis-apuntes && gemini')">Copiar</button>
     </div>
+    <p style="color:var(--text-dim);font-size:.85rem;margin-top:-12px;margin-bottom:16px;font-style:italic">* Supon que tienes un archivo &laquo;apuntes.txt&raquo; con tus apuntes de Historia en esa carpeta</p>
 
     <div class="prompt-box">
       <pre>Lee el archivo apuntes.txt y haz lo siguiente:
