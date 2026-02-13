@@ -666,6 +666,37 @@ body::after{
   <h2>Guia de Instalacion <span class="accent">para Mortales</span></h2>
   <p>No te preocupes si nunca has abierto una terminal. Vamos paso a paso, sin prisas.</p>
 
+  <!-- PASO 0 -->
+  <div class="step-block fade-up">
+    <div class="step-num">PASO 0</div>
+    <h4>💻 Abrir la Terminal</h4>
+    <p style="color:var(--text-secondary);font-size:.93rem;margin-bottom:16px">La terminal es la ventana donde escribiras los comandos. No te asustes, es mas facil de lo que parece.</p>
+
+    <div class="os-tabs">
+      <button class="os-tab active" onclick="switchOS(this,'open-win')">🪟 Windows</button>
+      <button class="os-tab" onclick="switchOS(this,'open-linux')">🐧 Ubuntu / Linux</button>
+    </div>
+
+    <div class="os-content active" id="open-win">
+      <ol class="step-list">
+        <li>Pulsa las teclas <strong>Windows + R</strong> a la vez</li>
+        <li>Escribe <strong>powershell</strong> y pulsa Enter</li>
+        <li>Se abrira una ventana azul/negra con texto &mdash; esa es tu terminal!</li>
+      </ol>
+      <div class="alert tip" style="margin-top:16px">
+        <span class="alert-icon">💡</span>
+        <div><strong>ALTERNATIVA:</strong> Tambien puedes buscar <strong>&laquo;PowerShell&raquo;</strong> o <strong>&laquo;Terminal&raquo;</strong> en el menu de inicio (la lupa de la barra de tareas).</div>
+      </div>
+    </div>
+
+    <div class="os-content" id="open-linux">
+      <ol class="step-list">
+        <li>Pulsa <strong>Ctrl + Alt + T</strong> &mdash; se abre directamente</li>
+        <li>Si no funciona, busca <strong>&laquo;Terminal&raquo;</strong> en el menu de aplicaciones</li>
+      </ol>
+    </div>
+  </div>
+
   <!-- PASO 1 -->
   <div class="step-block fade-up">
     <div class="step-num">PASO 1</div>
