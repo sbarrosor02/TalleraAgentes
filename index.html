@@ -502,7 +502,7 @@ body::after{
 @media(max-width:768px){
   .toc{display:none}
   .comparison{grid-template-columns:1fr}
-  .model-grid{grid-template-columns:1fr}
+  .model-grid{grid-template-columns:1fr!important}
   .container{padding:0 16px}
   .hero{padding:60px 16px;min-height:90vh}
   .section{padding:60px 0}
@@ -868,7 +868,7 @@ body::after{
 
   <h3>Que modelo usar?</h3>
 
-  <div class="model-grid">
+  <div class="model-grid" style="grid-template-columns:repeat(3,1fr)">
     <div class="model-card flash fade-up">
       <div class="model-name">gemini-2.5-flash</div>
       <div class="model-row"><span class="model-label">Velocidad</span><span>⚡⚡⚡ Muy rapido</span></div>
@@ -881,6 +881,17 @@ body::after{
       <div class="model-row"><span class="model-label">Inteligencia</span><span>🧠🧠🧠 Excelente</span></div>
       <div class="model-row"><span class="model-label">Ideal para</span><span>Codigo complejo, analisis profundo</span></div>
     </div>
+    <div class="model-card fade-up delay-2" style="border-top:3px solid var(--magenta)">
+      <div class="model-name" style="color:var(--magenta)">gemini-3-pro</div>
+      <div class="model-row"><span class="model-label">Velocidad</span><span>⚡⚡ Rapido</span></div>
+      <div class="model-row"><span class="model-label">Inteligencia</span><span>🧠🧠🧠🧠 Superior</span></div>
+      <div class="model-row"><span class="model-label">Ideal para</span><span>Lo mas avanzado disponible</span></div>
+    </div>
+  </div>
+
+  <div class="alert info fade-up" style="margin-top:8px">
+    <span class="alert-icon">🔓</span>
+    <div><strong>DESBLOQUEAR GEMINI 3 PRO:</strong> Este modelo no aparece por defecto. Para activarlo, escribe <code style="color:var(--cyan)">/settings</code> dentro de Gemini CLI y habilita las <strong>funcionalidades avanzadas</strong>. Despues podras seleccionarlo con <code style="color:var(--cyan)">/model gemini-3-pro</code>.</div>
   </div>
 
   <h3>Comandos utiles dentro de Gemini CLI</h3>
@@ -894,6 +905,8 @@ body::after{
     <div class="terminal-body">
 <code><span class="cmd">/model</span> gemini-2.5-pro      <span class="comment">&rarr; Cambiar al modelo Pro (mas potente)</span>
 <span class="cmd">/model</span> gemini-2.5-flash    <span class="comment">&rarr; Cambiar a Flash (mas rapido)</span>
+<span class="cmd">/model</span> gemini-3-pro        <span class="comment">&rarr; El mas avanzado (requiere /settings)</span>
+<span class="cmd">/settings</span>                   <span class="comment">&rarr; Abrir ajustes (activar funciones avanzadas)</span>
 <span class="cmd">/help</span>                       <span class="comment">&rarr; Ver todos los comandos disponibles</span>
 <span class="cmd">/stats</span>                      <span class="comment">&rarr; Ver cuantas peticiones has gastado</span>
 <span class="cmd">/quit</span>                       <span class="comment">&rarr; Salir de Gemini CLI</span></code>
@@ -903,7 +916,7 @@ body::after{
   <h3>Por que importan los modelos mas recientes?</h3>
 
   <div class="quote-block fade-up">
-    Los modelos mas recientes como Gemini 2.5 tienen <strong>&laquo;razonamiento extendido&raquo;</strong> &mdash; eso significa que <em>PIENSAN</em> antes de responder. No solo predicen la siguiente palabra, sino que planifican, consideran alternativas y verifican su propio trabajo.<br><br>
+    Los modelos mas recientes como Gemini 3 Pro tienen <strong>&laquo;razonamiento extendido&raquo;</strong> &mdash; eso significa que <em>PIENSAN</em> antes de responder. No solo predicen la siguiente palabra, sino que planifican, consideran alternativas y verifican su propio trabajo.<br><br>
     Es como la diferencia entre un alumno que responde lo primero que se le ocurre y otro que <strong>se para a pensar 30 segundos</strong> antes de contestar.
   </div>
 
