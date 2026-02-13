@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>De Chatbot a Agente | Domina la IA desde la CLI</title>
+<meta name="description" content="Aprende a usar Gemini CLI, el agente de IA que crea archivos, ejecuta codigo y construye proyectos enteros en tu ordenador. Gratis.">
+<meta property="og:title" content="De Chatbot a Agente | Domina la IA desde la CLI">
+<meta property="og:description" content="Taller practico: aprende a usar agentes de IA desde la linea de comandos con Gemini CLI.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sbarrosor02.github.io/TalleraAgentes/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -317,11 +322,11 @@ body::after{
 .terminal-copy.copied{color:var(--green);border-color:var(--green)}
 .terminal-body{padding:16px 20px;overflow-x:auto}
 .terminal-body code{color:var(--text-primary)}
-.terminal-body .comment{color:var(--text-dim);font-style:italic}
+.terminal-body .comment{color:var(--text-dim);font-style:italic;opacity:.6;user-select:none}
 .terminal-body .cmd{color:var(--cyan)}
 .terminal-body .flag{color:var(--purple)}
 .terminal-body .string{color:var(--green)}
-.terminal-body .output{color:var(--text-dim)}
+.terminal-body .output{color:var(--text-dim);user-select:none}
 
 /* Big install command */
 .install-cmd{
@@ -685,6 +690,7 @@ body::after{
         <div class="terminal-header">
           <span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span>
           <span class="terminal-title">PowerShell</span>
+          <button class="terminal-copy" onclick="copyCode(this)">copiar</button>
         </div>
         <div class="terminal-body">
 <code><span class="cmd">node</span> <span class="flag">--version</span>
@@ -1157,11 +1163,18 @@ function switchOS2(btn, id) {
   document.getElementById(id).classList.add('active');
 }
 
-// ── Copy terminal code ──
+// ── Copy terminal code (only commands, not comments) ──
 function copyCode(btn) {
   const body = btn.closest('.terminal').querySelector('.terminal-body code');
-  const text = body.innerText;
-  navigator.clipboard.writeText(text).then(() => {
+  const lines = body.innerText.split('\n');
+  const commands = lines
+    .map(l => l.replace(/\s*[\u2192\u2794→].*$/, '').trimEnd())   // strip → descriptions
+    .filter(l => {
+      const t = l.trim();
+      return t && !t.startsWith('#') && !t.startsWith('//');   // strip comments & blanks
+    })
+    .join('\n');
+  navigator.clipboard.writeText(commands).then(() => {
     btn.textContent = 'copiado!';
     btn.classList.add('copied');
     setTimeout(() => { btn.textContent = 'copiar'; btn.classList.remove('copied'); }, 2000);
